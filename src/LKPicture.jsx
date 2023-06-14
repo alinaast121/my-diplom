@@ -1,62 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './4lkpicture.css';
 import { Link } from 'react-router-dom';
-import * as THREE from 'three';
-import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter.js';
-import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
-/*const modelViewerScript = document.createElement('script');
-modelViewerScript.src = 'https://cdn.jsdelivr.net/npm/model-viewer/dist/model-viewer.min.js';
-document.head.appendChild(modelViewerScript);*/
+import axios from 'axios';
 
 export const LKPicture = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [rating, setRating] = useState(0);
-  
-  /*const startAR = () => {
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    const exportButton = document.getElementById('arButton');
-
-    if (exportButton) {
-      exportButton.addEventListener('click', exportModel);
-    }
-
-    function exportModel() {
-      const scene = new THREE.Scene();
-      const loader = new GLTFLoader();
-
-      loader.load('/eeb65bec-dffe-4c83-90ba-fff72d66ca58.height-1290.jpg', function (gltf) {
-        const model = gltf.scene;
-        scene.add(model);
-        
-        const exporter = new GLTFExporter();
-        exporter.parse(scene, function (gltf) {
-          const gltfModel = JSON.stringify(gltf);
-          const viewer = document.getElementById('myModelViewer');
-          viewer.src = `data:model/gltf+json;base64,${window.btoa(gltfModel)}`;
-        });
-      });
-
-      document.body.appendChild(renderer.domElement);
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      
-      document.body.appendChild(VRButton.createButton(renderer));
-      renderer.xr.enabled = true;
-
-      renderer.setAnimationLoop(function () {
-        renderer.render(scene, camera);
-      });
-    } 
-    exportModel();
-  };
-
-    useEffect(() => {
-    startAR();
-  }, []);*/
 
   const handleSearchClick = () => {
     setIsSearchVisible(true);
@@ -71,17 +22,27 @@ export const LKPicture = () => {
   };
 
   const handleCommentChange = (event) => {
-    setNewComment(event.target.value);
+    setNewComment((event.target).value);
   };
 
-  const handleCommentSubmit = (event) => {
+  const handleCommentSubmit = async (event) => {
     event.preventDefault();
     if (newComment.trim() !== '') {
-      setComments([...comments, newComment]);
+      // const comment = {
+      //   text: newComment
+      // };
+      const response = await axios.post('https://localhost:5555/work/1/comment/add', {text: newComment});
+
+      setComments(comments => [...comments, newComment]);
       setNewComment('');
     }
   };
-  
+
+  const handleDeleteImage = (imageUrl) => {
+    const updatedImages = images.filter((image) => image !== imageUrl);
+    setImages(updatedImages);
+  };
+
   return (
         <div className="v2_73">
             <div className="v2_75"></div>
@@ -130,20 +91,20 @@ export const LKPicture = () => {
                 </div>
               </div>
 
-            <form className='write' onSubmit={handleCommentSubmit}>
+            <div className='write'>
               <textarea
-              className='write-mes'
-              value={newComment}
-              onChange={handleCommentChange}
-              placeholder="Написать комментарий"
+                className='write-mes'
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder="Написать комментарий"
               />
 
-                <button className='comment' type="submit">
+                <button className='comment' onClick={handleCommentSubmit}>
                   <div className='comment1'></div>
                   <div className='comment2'></div>
                   <div className='comment3'></div>
               </button>
-            </form>
+            </div>
             
             <button className="button" onClick={handleSearchClick}>
                 <div className="button-inner">
@@ -173,6 +134,7 @@ export const LKPicture = () => {
                 </div>
               </div>
             </Link>
+
             
             <div className="v2_83"></div>
             <span className="v2_86">описание</span>
@@ -182,17 +144,8 @@ export const LKPicture = () => {
               <span className="v37_25">VR</span>
             </Link>
 
-            {/*<button id='arButton' className='ar-button'>
-              <span className="v37_25">VR</span>
+            <button className="del-button" onClick={() => handleDeleteImage(imageUrl)}>
             </button>
-            <model-viewer
-              id="myModelViewer"
-              src="/eeb65bec-dffe-4c83-90ba-fff72d66ca58.height-1290.gltf"
-              autoplay
-              camera-controls
-              shadow-intensity="0.5"
-              background-color="#f0f0f0"
-            ></model-viewer>*/}
             
             <Link to="/" className="button-mainp">
               <div className="button-container">

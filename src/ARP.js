@@ -27,8 +27,9 @@ export const ARPage = () => {
         const exporter = new GLTFExporter();
         exporter.parse(scene, function (gltf) {
           const gltfModel = JSON.stringify(gltf);
-          const viewer = document.getElementById('myModelViewer');
-          viewer.src = `data:model/gltf+json;base64,${window.btoa(gltfModel)}`;
+          
+          // TODO: Handle the export, e.g. send the glTF data to the server or save it locally
+          handleExport(gltfModel);
         });
       });
 
@@ -42,6 +43,26 @@ export const ARPage = () => {
         renderer.render(scene, camera);
       });
     }
+    
+    // TODO: Implement your export handling logic here
+    function handleExport(gltfModel) {
+      // Example: Send the glTF data to the server
+      /*fetch('/api/export', {
+        method: 'POST',
+        body: gltfModel,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('GLTF model exported successfully:', data);
+        })
+        .catch(error => {
+          console.error('Failed to export GLTF model:', error);
+        });*/
+    }
+
     exportModel();
   };
 
@@ -61,15 +82,15 @@ export const ARPage = () => {
         Start AR
       </button>
       {arVisible && (
-  <model-viewer
-    id="myModelViewer"
-    src="/model.gltf"
-    autoplay
-    camera-controls
-    shadow-intensity="0.5"
-    background-color="#f0f0f0"
-  ></model-viewer>)
-  }
+        <model-viewer
+          id="myModelViewer"
+          src="/model.gltf"
+          autoplay
+          camera-controls
+          shadow-intensity="0.5"
+          background-color="#f0f0f0"
+        ></model-viewer>
+      )}
     </div>
   );
 };
