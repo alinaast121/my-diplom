@@ -7,6 +7,7 @@ import { LKPicture } from './LKPicture';
 import { LoadPicture } from './LoadPicture';
 import { Login } from './Login';
 import { Sigin } from './Sigin';
+import { ARPage } from './ARP';
 
 export const useRoutes = (isAuthenticated) => {
   if (isAuthenticated) {
@@ -19,6 +20,7 @@ export const useRoutes = (isAuthenticated) => {
         <Route path="/loadingpicture" element={<LoadPicture />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sigin" element={<Sigin />} />
+        <Route path="/ar" element={<ARPage />} />
       </Routes>
     );
   }

@@ -6,6 +6,9 @@ import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter.js';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+/*const modelViewerScript = document.createElement('script');
+modelViewerScript.src = 'https://cdn.jsdelivr.net/npm/model-viewer/dist/model-viewer.min.js';
+document.head.appendChild(modelViewerScript);*/
 
 export const LKPicture = () => {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -13,7 +16,7 @@ export const LKPicture = () => {
   const [newComment, setNewComment] = useState('');
   const [rating, setRating] = useState(0);
   
-  const startAR = () => {
+  /*const startAR = () => {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
     const exportButton = document.getElementById('arButton');
@@ -26,7 +29,7 @@ export const LKPicture = () => {
       const scene = new THREE.Scene();
       const loader = new GLTFLoader();
 
-      loader.load('https://www.theartnewspaper.ru/media/images/eeb65bec-dffe-4c83-90ba-fff72d66ca58.height-1290.jpg', function (gltf) {
+      loader.load('/eeb65bec-dffe-4c83-90ba-fff72d66ca58.height-1290.jpg', function (gltf) {
         const model = gltf.scene;
         scene.add(model);
         
@@ -51,9 +54,9 @@ export const LKPicture = () => {
     exportModel();
   };
 
-  useEffect(() => {
+    useEffect(() => {
     startAR();
-  }, []); 
+  }, []);*/
 
   const handleSearchClick = () => {
     setIsSearchVisible(true);
@@ -78,7 +81,7 @@ export const LKPicture = () => {
       setNewComment('');
     }
   };
-
+  
   return (
         <div className="v2_73">
             <div className="v2_75"></div>
@@ -170,7 +173,6 @@ export const LKPicture = () => {
                 </div>
               </div>
             </Link>
-
             
             <div className="v2_83"></div>
             <span className="v2_86">описание</span>
@@ -180,11 +182,9 @@ export const LKPicture = () => {
               <span className="v37_25">VR</span>
             </Link>
 
-            <div className='arButton'>
-              <button id='arButton' className='ar-button'>
-                <span className="v37_25">VR</span>
-              </button>
-            </div>
+            {/*<button id='arButton' className='ar-button'>
+              <span className="v37_25">VR</span>
+            </button>
             <model-viewer
               id="myModelViewer"
               src="/eeb65bec-dffe-4c83-90ba-fff72d66ca58.height-1290.gltf"
@@ -192,7 +192,7 @@ export const LKPicture = () => {
               camera-controls
               shadow-intensity="0.5"
               background-color="#f0f0f0"
-            ></model-viewer>
+            ></model-viewer>*/}
             
             <Link to="/" className="button-mainp">
               <div className="button-container">
