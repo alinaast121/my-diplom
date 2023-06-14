@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as THREE from 'three';
 import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter.js';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import { GLTFLoader } from 'gltf-pipeline';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 export const ARPage = () => {
   const [arVisible, setArVisible] = useState(false);
@@ -20,7 +20,7 @@ export const ARPage = () => {
       const scene = new THREE.Scene();
       const loader = new GLTFLoader();
 
-      loader.load('/eeb65bec-dffe-4c83-90ba-fff72d66ca58.height-1290.jpg', function (gltf) {
+      loader.load('/model.gltf', function (gltf) {
         const model = gltf.scene;
         scene.add(model);
 
@@ -61,15 +61,15 @@ export const ARPage = () => {
         Start AR
       </button>
       {arVisible && (
-        <model-viewer
-          id="myModelViewer"
-          src="/eeb65bec-dffe-4c83-90ba-fff72d66ca58.height-1290.gltf"
-          autoplay
-          camera-controls
-          shadow-intensity="0.5"
-          background-color="#f0f0f0"
-        ></model-viewer>
-      )}
+  <model-viewer
+    id="myModelViewer"
+    src="/model.gltf"
+    autoplay
+    camera-controls
+    shadow-intensity="0.5"
+    background-color="#f0f0f0"
+  ></model-viewer>)
+  }
     </div>
   );
 };
