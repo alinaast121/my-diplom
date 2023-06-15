@@ -21,9 +21,9 @@ export const LKPicture = () => {
     setRating(value);
   };
 
-  const handleCommentChange = (event) => {
+  /*const handleCommentChange = (event) => {
     setNewComment((event.target).value);
-  };
+  };*/
 
   const handleCommentSubmit = async (event) => {
     event.preventDefault();
@@ -38,14 +38,16 @@ export const LKPicture = () => {
     }
   };
 
-  const handleDeleteImage = (imageUrl) => {
+  /*const handleDeleteImage = (imageUrl) => {
     const updatedImages = images.filter((image) => image !== imageUrl);
     setImages(updatedImages);
-  };
+  };*/
 
   return (
         <div className="v2_73">
-            <div className="v2_75"></div>
+            <div className="v2_75">
+              <img src="/picture/pic6.png"/>
+            </div>
             <div className="v2_84"></div>
             <div className="v2_93"></div>
             <div className="v37_24"></div>
@@ -144,8 +146,8 @@ export const LKPicture = () => {
               <span className="v37_25">VR</span>
             </Link>
 
-            <button className="del-button" onClick={() => handleDeleteImage(imageUrl)}>
-            </button>
+            {/*<button className="del-button" onClick={() => handleDeleteImage(imageUrl)}>
+            </button>*/}
             
             <Link to="/" className="button-mainp">
               <div className="button-container">

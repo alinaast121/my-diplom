@@ -19,15 +19,25 @@ export const Glav = () => {
             <Link to="/likapicture:id" className="button-picture">
               <div className="button-container">
                 <div className="button-inner">
-                  <div className="v2_26"></div>
+                  <div className="v2_26">
+                    <img src="/picture/pic6.png"/>
+                  </div>
                 </div>
               </div>
             </Link>
 
-            <div className="v2_46"></div>
-            <div className="v2_47"></div>
-            <div className="v2_48"></div>
-            <div className="v2_49"></div>
+            <div className="v2_46">
+              <img src="/picture/pic7.png"/>
+            </div>
+            <div className="v2_47">
+              <img src="/picture/pic2.png"/>
+            </div>
+            <div className="v2_48">
+              <img src="/picture/pic3.png"/>
+            </div>
+            <div className="v2_49">
+              <img src="/picture/pic5.png"/>
+            </div>
             
             <button className="search" onClick={handleSearchClick}>
                <div className="button-inner">

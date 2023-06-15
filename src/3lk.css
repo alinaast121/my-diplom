@@ -49,7 +49,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v29_27 {
+.v29_27{
   width: 360px;
   height: 78px;
   background-repeat: no-repeat;
@@ -62,7 +62,7 @@ body {
   left: 0px;
   overflow-x: scroll;
 }
-.v29_16 {
+.v29_16 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -71,8 +71,9 @@ body {
   top: 0px;
   left: 10px;
   border-radius: 32px;
+  object-fit: cover;
 }
-.v29_17 {
+.v29_17 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -81,8 +82,9 @@ body {
   top: 0px;
   left: 103px;
   border-radius: 32px;
+  object-fit: cover;
 }
-.v29_18 {
+.v29_18 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -91,8 +93,9 @@ body {
   top: 0px;
   left: 196px;
   border-radius: 32px;
+  object-fit: cover;
 }
-.v29_19 {
+.v29_19 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -100,9 +103,10 @@ body {
   position: absolute;
   top: 0px;
   left: 289px;
+  object-fit: cover;
   border-radius: 32px;
 }
-.v29_20 {
+.v29_20 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -111,8 +115,9 @@ body {
   top: 0px;
   left: 382px;
   border-radius: 32px;
+  object-fit: cover;
 }
-.v29_21 {
+.v29_21 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -121,6 +126,7 @@ body {
   top: 0px;
   left: 475px;
   border-radius: 32px;
+  object-fit: cover;
 }
 .v48_46 {
   width: 8px;
@@ -231,7 +237,7 @@ body {
   left: 119px;
   overflow-x: scroll;
 }
-.v29_3 {
+.v29_3 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -240,8 +246,9 @@ body {
   top: 0px;
   left: 0px;
   border-radius: 32px;
+  object-fit: cover;
 }
-.v29_4 {
+.v29_4 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -250,8 +257,9 @@ body {
   top: 0px;
   left: 93px;
   border-radius: 32px;
+  object-fit: cover;
 }
-.v29_5 {
+.v29_5 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -260,8 +268,9 @@ body {
   top: 0px;
   left: 186px;
   border-radius: 32px;
+  object-fit: cover;
 }
-.v29_6 {
+.v29_6 img {
   width: 78px;
   height: 78px;
   background: rgba(217,217,217,1);
@@ -270,8 +279,9 @@ body {
   top: 0px;
   left: 279px;
   border-radius: 32px;
+  object-fit: cover;
 }
-.v29_7 {
+.v29_7 img {
   width: 78px;
   height: 78px;
   background: #d9d9d9;
@@ -280,6 +290,7 @@ body {
   top: 0px;
   left: 372px;
   border-radius: 32px;
+  object-fit: cover;
 }
 .v48_47 {
   width: 8px;

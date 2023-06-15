@@ -22,12 +22,24 @@ export const LK = () => {
       <div className="v2_124"></div>
       <span className="v2_125">логин</span>
       <div className="v29_27">
-      <div className="v29_16"></div>
-      <div className="v29_17"></div>
-      <div className="v29_18"></div>
-      <div className="v29_19"></div>
-      <div className="v29_20"></div>
-      <div className="v29_21"></div>
+      <div className="v29_16">
+        <img src="/picture/pic7.png"/>
+      </div>
+      <div className="v29_17">
+        <img src="/picture/pic1.png"/>
+      </div>
+      <div className="v29_18">
+        <img src="/picture/pic3.png"/>
+      </div>
+      <div className="v29_19">
+        <img src="/picture/pic2.png"/>
+      </div>
+      <div className="v29_20">
+        <img src="/picture/pic5.png"/>
+      </div>
+      <div className="v29_21">
+        <img src="/picture/pic4.png"/>
+      </div>
       <div className="v48_46"></div>
     </div>
       <span className="v29_14"> ср. оценка</span>
@@ -62,11 +74,21 @@ export const LK = () => {
 
             
       <div className="v29_26">
-        <div className="v29_3"></div>
-        <div className="v29_4"></div>
-        <div className="v29_5"></div>
-        <div className="v29_6"></div>
-        <div className="v29_7"></div>
+        <div className="v29_3">
+          <img src="/picture/pic6.png"/>
+        </div>
+        <div className="v29_4">
+          <img src="/picture/pic12.png"/>
+        </div>
+        <div className="v29_5">
+          <img src="/picture/pic9.png"/>
+        </div>
+        <div className="v29_6">
+          <img src="/picture/pic13.png"/>
+        </div>
+        <div className="v29_7">
+          <img src="/picture/pic14.png"/>
+        </div>
         <div className="v48_47"></div>
       </div>
 
